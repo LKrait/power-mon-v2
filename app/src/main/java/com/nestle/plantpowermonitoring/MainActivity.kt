@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private val yellow = Color.rgb(255,197,51)
     private val red = Color.rgb(255,75,85)
     private fun dp(v:Int)= (v*resources.displayMetrics.density).toInt()
-    private fun text(s:String, size:Float, color:Int=white, bold:Boolean=false)=TextView(this).apply{ text=s; textSize=size; setTextColor(color); gravity=Gravity.CENTER_VERTICAL; if(bold)setTypeface(typeface,1) }
+    private fun text(s:String, size:Number, color:Int=white, bold:Boolean=false)=TextView(this).apply{ text=s; textSize=size.toFloat(); setTextColor(color); gravity=Gravity.CENTER_VERTICAL; if(bold)setTypeface(typeface,1) }
     private fun card():LinearLayout=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(12),dp(12),dp(12),dp(12));setBackgroundResource(R.drawable.bg_card)}
     override fun onCreate(b:Bundle?){super.onCreate(b);window.statusBarColor=Color.rgb(4,17,30);window.navigationBarColor=Color.rgb(4,17,30);build()}
     private fun build(){
